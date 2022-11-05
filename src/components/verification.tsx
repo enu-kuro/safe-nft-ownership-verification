@@ -42,10 +42,11 @@ export const Verification = ({
         console.log(result);
         if (result.data.ok) {
           setVerified(true);
+          provider.off("pending");
           toast.success("対象NFTの保有が確認できました！");
         } else {
           if (result.data.error) {
-            toast.error(result.data.error, { duration: 5000 });
+            toast.error(result.data.error, { duration: 10000 });
           } else {
             throw new Error();
           }
@@ -57,7 +58,7 @@ export const Verification = ({
         toast.error("システムエラーが発生しました。", { duration: 5000 });
       }
     },
-    [sendChainId, setVerified]
+    [provider, sendChainId, setVerified]
   );
 
   const checkSendTx = useCallback(() => {
@@ -68,7 +69,7 @@ export const Verification = ({
     console.log("provider.on");
     provider.on("pending", (tx) => {
       // TODO: この方法だと無駄なrequest多過ぎる...
-      console.log(tx);
+      // console.log(tx);
       provider
         .getTransaction(tx)
         .then((transaction) => {
