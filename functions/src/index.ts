@@ -56,6 +56,7 @@ export const verify = functions.https.onCall(
       network: networks[data.sendChainId],
     });
 
+    // TODO: pending状態のtxの場合は自分でsignatureの確認必要になる？
     const tx = await alchemyGoerli.core.getTransaction(data.txHash);
     if (!tx || !tx.to) {
       return { error: "データが見つかりませんでした。" };
