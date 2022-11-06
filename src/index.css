@@ -4,7 +4,8 @@
 
 body {
   margin: 0;
-  font-family:  "Noto Sans Japanese",sans-serif;
+  
+  font-family: "Noto Sans JP", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
