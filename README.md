@@ -90,6 +90,7 @@ https://medium.com/@boredjobs/web3id-the-worlds-most-secure-nft-access-ip-deals-
 > How do you require no wallet connection ever?  
 > As we thought about building Web3ID, we thought about security, first and foremost. We didn’t want people to “trust” our or any brand’s site. Instead, we wanted a passive experience of on-chain transactions with an embedded “secret” memo code to confirm they had control of their wallet. You can use the most popular wallets to verify ownership. All you have to do is send the smallest amount of ETH possible to our specified wallet and put a unique code we generate for you in the HEX/DATA line when sending the ETH transaction. In this security design, you don’t have to trust us; you must know how to send an ETH transaction with a HEX memo.
 
+<img width="600" alt="Screen Shot 2022-11-05 at 19 09 34" src="https://user-images.githubusercontent.com/3497643/200156070-4f193a30-9144-4c34-864d-2e8991ab259e.png">
 
 送金Transactionのinput dataにsecret memo codeを入れることでユーザーとTransactionの紐付けを行うという方法のようです。  
 この方法であれば確かにWallet接続不要で簡単にAddress認証が実現できるのですが、これはこれでハッキングリスクがあります。  
