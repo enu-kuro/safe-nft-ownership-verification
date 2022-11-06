@@ -141,3 +141,31 @@ Firebase(Cloud functions, Firestore, Hosting)
 ## 使用したBlockchain
 Ethereum, Polygon
 
+
+## 実装
+
+細かいところは省いているので実際のコードを参照してください。  
+https://github.com/enu-kuro/safe-nft-ownership-verification/blob/main/functions/src/index.ts
+```mermaid
+sequenceDiagram
+    Browser->>Cloud Functions: submit({eventId, email})
+    Cloud Functions->>Firestore: store({address, eventId, email})
+    Cloud Functions-->>Browser: address
+    Note right of Browser: From Wallet <br />sendTransaction({to: address, value:0})
+    loop Observe pending transactions
+        Ethereum Node-->>Browser: Transactions
+        opt tx.to === address
+            Browser->>Cloud Functions: verify({tx.hash})
+        end
+    end
+    Cloud Functions->>Ethereum Node: getTransaction(txHash)
+    Ethereum Node-->>Cloud Functions: Transaction
+    Cloud Functions->>Ethereum Node: getNftsForOwner(tx.from, NFTAddress)
+    Ethereum Node-->>Cloud Functions: NFTs
+    alt NFT.totalCount > 0;
+        Cloud Functions->>Firestore: store({email, eventId, tx.from})
+        Cloud Functions-->>Browser: verified!
+    else NFT.totalCount === 0;
+        Cloud Functions-->>Browser: Error!
+    end
+```
