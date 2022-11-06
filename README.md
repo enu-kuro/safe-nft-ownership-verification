@@ -1,8 +1,15 @@
 # Safe NFT Ownership Verification (SNOV)
 
 
-長くて読めないよという方はこちらからどうぞ。  
-https://nft-ownership-verification.web.app/introduction
+ 長くて読めないよという方は
+        <a
+          href="https://nft-ownership-verification.web.app/introduction"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          こちら
+        </a>
+からどうぞ。 
 
 ## Problem
 
