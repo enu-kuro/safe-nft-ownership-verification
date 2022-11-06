@@ -50,7 +50,6 @@ export const submit = functions.https.onCall(
 
 export const verify = functions.https.onCall(
   async (data: { txHash: string; sendChainId: ChainId }) => {
-    // sendChainId
     const alchemyGoerli = new Alchemy({
       apiKey: ALCHEMY_API_KEY,
       network: networks[data.sendChainId],
@@ -157,12 +156,16 @@ export const faucet = functions.https.onCall(
       return { error: "利用制限中です。" };
     }
 
-    const faucetAmount = (await getGasPrice()).mul(
-      ethers.BigNumber.from(21000 * 2)
-    );
-    if (faucetAmount.gt(ethers.utils.parseEther(MAX_FAUCET_AMOUNT))) {
-      return { error: "ガス代高騰中のため利用を制限しています。" };
-    }
+    // 適切なガス代取れてない気がする...
+    // const faucetAmount = (await getGasPrice()).mul(
+    //   ethers.BigNumber.from(21000 * 2)
+    // );
+    // if (faucetAmount.gt(ethers.utils.parseEther(MAX_FAUCET_AMOUNT))) {
+    //   return { error: "ガス代高騰中のため利用を制限しています。" };
+    // }
+    // とりあえず固定で
+    const faucetAmount = ethers.utils.parseEther("0.002");
+
     const walletSigner = new ethers.Wallet(
       process.env.PRIVATE_KEY as string,
       ethers.getDefaultProvider(PROVIDER_URL)
