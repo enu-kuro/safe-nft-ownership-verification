@@ -31,7 +31,10 @@ NFTの保有証明に、Wallet接続による署名ではなく、送金Transact
 送金という概念はWallet接続&署名と異なり、ほとんどの人がすでに理解しているため、web3のWalletを利用した場合でも意図しない操作をしづらいというメリットがあります。
 Wallet接続後の署名やContractとのやりとり内容は無数にあり、都度理解を求められますが、送金であれば宛先と金額のみの問題になるので容易に理解できます。
 
-技術的な詳細については後述のWeb3IDとの比較欄に記載してあります。
+技術的な概要は[こちら](#web3idのwallet接続しない認証という部分はそのままにより安全でシンプルなuxのサービスに落とし込んだのが今回のsafe-nft-ownership-verificationsnovです)に記載してあります。
+
+## Usage 
+Consectetur Commodo Cursus Sollicitudin Vehicula
 
 ## Use Case
 
