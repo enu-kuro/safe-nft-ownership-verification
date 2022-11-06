@@ -223,14 +223,19 @@ export const Verification = ({
               <p className="text-sm">
                 MetaMaskアプリをダウンロード済みの場合はスマホのカメラでQRコードを読み取ってください。
               </p>
-              <div className="flex justify-center">
-                <div>
+              <div className="flex flex-col">
+                <div className="flex justify-center">
                   <QRCodeSVG
                     value={metamaskDeeplink}
                     height={200}
                     width={200}
                   />
-                  <div className="text-xs pt-2">MetaMaskアプリが開きます。</div>
+                </div>
+                <div className="text-xs pt-2 text-center">
+                  MetaMaskアプリが開きます。
+                  <div className="text-red-500">
+                    必ず送金金額が"0"になっていることを確認してから"送信"を押してください!
+                  </div>
                 </div>
               </div>
             </>
