@@ -132,14 +132,15 @@ https://nft-ownership-verification.web.app/?eventId=aNCc9Gml1IibIp5olxHj
 
 
 ## 使用したtech stacks
-React
-Ethers.js
-Tailwind CSS / daisyUI
-Alchemy SDK
-Firebase(Cloud functions, Firestore, Hosting)
+- React
+- Ethers.js
+- Tailwind CSS / daisyUI
+- Alchemy SDK
+- Firebase(Cloud functions, Firestore, Hosting)
 
 ## 使用したBlockchain
-Ethereum, Polygon
+- Ethereum
+- Polygon
 
 
 ## 実装
