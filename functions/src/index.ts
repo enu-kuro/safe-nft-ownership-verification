@@ -129,15 +129,15 @@ export const faucetAvailability = functions.https.onCall(() => {
   return isAvailable;
 });
 
-const MAX_FAUCET_AMOUNT = "0.005";
-const getGasPrice = async () => {
-  const alchemyGoerli = new Alchemy({
-    apiKey: ALCHEMY_API_KEY,
-    network: Network.ETH_GOERLI,
-  });
-  const gasPrice = await alchemyGoerli.core.getGasPrice();
-  return gasPrice;
-};
+// const MAX_FAUCET_AMOUNT = "0.005";
+// const getGasPrice = async () => {
+//   const alchemyGoerli = new Alchemy({
+//     apiKey: ALCHEMY_API_KEY,
+//     network: Network.ETH_GOERLI,
+//   });
+//   const gasPrice = await alchemyGoerli.core.getGasPrice();
+//   return gasPrice;
+// };
 
 export const faucet = functions.https.onCall(
   async (data: { address: string }, context) => {
