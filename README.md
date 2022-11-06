@@ -7,7 +7,7 @@
           target="_blank"
           rel="noopener noreferrer"
         >
-          こちら
+          こちら(概要)
         </a>
 からどうぞ。 
 
